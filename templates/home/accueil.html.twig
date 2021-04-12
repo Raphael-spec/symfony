@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{titre}} {% endblock %}
+
+{% block body %}
+
+    <div>
+        <h1>Ma page d'accueil</h1>{#commentaire...#}
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit, sit. Expedita neque rem saepe. Placeat quis quidem ea, qui distinctio, corrupti exercitationem autem, impedit inventore magnam ab voluptate architecto. Vel.</p>
+
+        <p>
+            {{jours[0]}}
+        </p>
+
+        <ul>
+            {% for j in jours %}
+            <li>{{j}} </li>
+            {% endfor %}
+        </ul>
+        <ol>
+            {% for i, j in jours %}
+                {% if i is even %}
+                <li style="color: blue">{{j}} </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+        <img src="images/ri.jpg" alt=""/><br/>
+        <img src="images/{{riri}}" alt="" /><br/>
+        <img src="{{ asset('images/'~ riri)}}" alt="" /> 
+        {# il va s'aarnger pour trouver le chamin pour s'afficher #}
+    </div>
+
+{% endblock %}
